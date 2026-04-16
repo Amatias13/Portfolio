@@ -67,7 +67,7 @@ export default function Experience() {
 
       {/* Education */}
       {education.length > 0 && (
-        <>
+        <div style={{ marginTop: "4rem" }}>
           <SectionLabel style={{ marginTop: "3rem" }}>Educação</SectionLabel>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginTop: "1rem" }}>
@@ -100,7 +100,7 @@ export default function Experience() {
               </motion.div>
             ))}
           </div>
-        </>
+        </div>
       )}
     </Section>
   );
