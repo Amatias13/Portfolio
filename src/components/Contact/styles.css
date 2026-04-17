@@ -1,0 +1,73 @@
+.contact {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.contact__label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.contact__title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.contact__subtitle {
+  color: var(--muted);
+  font-size: 0.85rem;
+  max-width: 360px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.contact__email {
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.3rem, 3vw, 2.2rem);
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-decoration: none;
+  margin-bottom: 2.5rem;
+  transition: color 0.3s;
+}
+
+.contact__email:hover { color: var(--accent2); }
+
+.contact__socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact__social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-decoration: none;
+  font-family: 'DM Mono', monospace;
+  transition: color 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.contact__social-btn:hover {
+  color: var(--accent2);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}

@@ -1,13 +1,21 @@
-import Nav from "./components/Nav";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Projects from "./components/Projects";
+import Nav        from "./components/Nav";
+import Hero       from "./components/Hero";
+import About      from "./components/About";
+import Projects   from "./components/Projects";
 import Experience from "./components/Experience";
-import Contact from "./components/Contact";
+import Contact    from "./components/Contact";
 import { Divider } from "./components/Section";
+import { ThemeProvider } from "./context/ThemeContext";
+import { LangProvider }  from "./context/LangContext";
+import { useLang }       from "./context/LangContext";
+import { useTranslation } from "./i18n/translations";
 import "./index.css";
+import "./App.css";
 
-export default function App() {
+function PortfolioContent() {
+  const { lang } = useLang();
+  const tr       = useTranslation(lang);
+
   return (
     <>
       <Nav />
@@ -22,13 +30,19 @@ export default function App() {
         <Divider />
         <Contact />
       </main>
-      <footer style={{
-        textAlign: "center", padding: "1.5rem",
-        fontSize: "0.7rem", color: "var(--muted)", letterSpacing: "0.05em",
-      }}>
-        © {new Date().getFullYear()} André Matias
-
+      <footer className="footer">
+        © {new Date().getFullYear()} André Matias · {tr.footer}
       </footer>
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <LangProvider>
+        <PortfolioContent />
+      </LangProvider>
+    </ThemeProvider>
   );
 }
