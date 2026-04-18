@@ -1,3 +1,5 @@
+import photo from "../assets/photo.jpg";
+
 export const personal = {
   name: "André Matias",
   title: "Full Stack Developer",
@@ -6,7 +8,7 @@ export const personal = {
   phone: "+351 934 926 224",
   github: "https://github.com/Amatias13",
   linkedin: "https://www.linkedin.com/in/andre-matias-dev/",
-  photo: "/photo.jpg",
+  photo: photo,
 
   // Hero — curto, pessoal, memorável
   tagline: {
