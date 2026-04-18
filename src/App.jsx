@@ -1,20 +1,20 @@
-import Nav        from "./components/Nav";
-import Hero       from "./components/Hero";
-import About      from "./components/About";
-import Projects   from "./components/Projects";
+import Nav from "./components/Nav";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Projects from "./components/Projects";
 import Experience from "./components/Experience";
-import Contact    from "./components/Contact";
+import Contact from "./components/Contact";
 import { Divider } from "./components/Section";
 import { ThemeProvider } from "./context/ThemeContext";
-import { LangProvider }  from "./context/LangContext";
-import { useLang }       from "./context/LangContext";
+import { LangProvider } from "./context/LangContext";
+import { useLang } from "./context/LangContext";
 import { useTranslation } from "./i18n/translations";
 import "./index.css";
 import "./App.css";
 
 function PortfolioContent() {
   const { lang } = useLang();
-  const tr       = useTranslation(lang);
+  const tr = useTranslation(lang);
 
   return (
     <>

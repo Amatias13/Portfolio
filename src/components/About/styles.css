@@ -12,7 +12,9 @@
   margin-bottom: 1rem;
 }
 
-.about__bio p:last-child { margin-bottom: 0; }
+.about__bio p:last-child {
+  margin-bottom: 0;
+}
 
 .about__stack-label {
   font-size: 0.68rem;
@@ -39,7 +41,7 @@
   text-transform: uppercase;
   border-radius: 2px;
   cursor: pointer;
-  font-family: 'DM Mono', monospace;
+  font-family: "DM Mono", monospace;
   transition: all 0.25s;
 }
 
@@ -68,8 +70,11 @@
   color: var(--muted);
   background: var(--bg3);
   cursor: default;
-  transition: border-color 0.25s, color 0.25s, background 0.25s;
-  font-family: 'DM Mono', monospace;
+  transition:
+    border-color 0.25s,
+    color 0.25s,
+    background 0.25s;
+  font-family: "DM Mono", monospace;
 }
 
 .about__skill-pill:hover {

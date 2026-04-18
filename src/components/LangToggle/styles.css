@@ -9,11 +9,14 @@
   background: transparent;
   cursor: pointer;
   color: var(--muted);
-  font-family: 'DM Mono', monospace;
+  font-family: "DM Mono", monospace;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: color 0.25s, border-color 0.25s, background 0.25s;
+  transition:
+    color 0.25s,
+    border-color 0.25s,
+    background 0.25s;
   white-space: nowrap;
 }
 

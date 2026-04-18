@@ -15,7 +15,7 @@
 }
 
 .contact__title {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: clamp(1.8rem, 4vw, 3rem);
   letter-spacing: -0.02em;
@@ -32,7 +32,7 @@
 
 .contact__email {
   display: inline-block;
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: clamp(1.3rem, 3vw, 2.2rem);
   letter-spacing: -0.02em;
@@ -42,7 +42,9 @@
   transition: color 0.3s;
 }
 
-.contact__email:hover { color: var(--accent2); }
+.contact__email:hover {
+  color: var(--accent2);
+}
 
 .contact__socials {
   display: flex;
@@ -62,8 +64,11 @@
   letter-spacing: 0.06em;
   color: var(--muted);
   text-decoration: none;
-  font-family: 'DM Mono', monospace;
-  transition: color 0.25s, border-color 0.25s, transform 0.25s;
+  font-family: "DM Mono", monospace;
+  transition:
+    color 0.25s,
+    border-color 0.25s,
+    transform 0.25s;
 }
 
 .contact__social-btn:hover {

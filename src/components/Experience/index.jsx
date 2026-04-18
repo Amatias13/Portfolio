@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Section, { SectionLabel, SectionTitle } from "../Section";
 import { useLang } from "../../context/LangContext";
@@ -5,6 +6,9 @@ import { useTranslation } from "../../i18n/translations";
 import { experience, education } from "../../data";
 import "./styles.css";
 
+/**
+ * Component to display professional experience and education in a timeline format. 
+ */
 function TimelineItem({ item, index, lang }) {
   return (
     <motion.div
@@ -31,9 +35,16 @@ function TimelineItem({ item, index, lang }) {
   );
 }
 
+/**
+ * Timeline-based layout to chronologically showcase my professional journey. 
+ * Each experience entry highlights the role, company, location, and key responsibilities or achievements. 
+ * The design emphasizes clarity and readability, making it easy for visitors to quickly grasp my career progression and the impact I've had in each position. 
+ * Additionally, an education section provides context on my academic background, rounding out the narrative of my development as a software engineer.
+ */
 export default function Experience() {
+  // language and translations
   const { lang } = useLang();
-  const tr       = useTranslation(lang);
+  const tr = useTranslation(lang);
 
   return (
     <Section id="experiencia">

@@ -1,19 +1,29 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { useLang } from "../../context/LangContext";
 import { useTranslation } from "../../i18n/translations";
 import { personal } from "../../data";
 import "./styles.css";
 
+// Animation variants for fade-in effects
 const fade = (delay = 0) => ({
-  initial:    { opacity: 0, y: 30 },
-  animate:    { opacity: 1, y: 0 },
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
   transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] },
 });
 
+/**
+ * The Hero component serves as the welcoming section of the portfolio, designed to make a strong first impression. 
+ * It features a bold introduction with my name and title, accompanied by a personal tagline that encapsulates my approach to software development. 
+ * The layout is visually engaging, with a profile photo and quick links to my GitHub and LinkedIn profiles.
+ * The design emphasizes clarity and personality, inviting visitors to explore more about me and my work.
+ */
 export default function Hero() {
+  // language and translations
   const { lang } = useLang();
-  const tr       = useTranslation(lang);
+  const tr = useTranslation(lang);
 
+  // Split name into first and last for styling
   const [firstName, ...rest] = personal.name.split(" ");
   const lastName = rest.join(" ");
 
@@ -34,7 +44,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p className="hero__bio" {...fade(0.25)}>
-          {personal.bio[lang][0]}
+          {personal.tagline[lang]}
         </motion.p>
 
         <motion.div className="hero__buttons" {...fade(0.35)}>
@@ -47,7 +57,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div className="hero__socials" {...fade(0.45)}>
-          <a href={personal.github}   target="_blank" rel="noreferrer" className="hero__social-link">GitHub ↗</a>
+          <a href={personal.github} target="_blank" rel="noreferrer" className="hero__social-link">GitHub ↗</a>
           <a href={personal.linkedin} target="_blank" rel="noreferrer" className="hero__social-link">LinkedIn ↗</a>
         </motion.div>
       </div>

@@ -31,14 +31,8 @@ export const experience = [
     period: { pt: "2022 — Presente", en: "2022 — Present" },
     current: true,
     bullets: {
-      pt: [
-        "Iniciativa focada em transformar ideias em soluções digitais com impacto real para empresas.",
-        "Missão de impulsionar o crescimento de negócios através da tecnologia e inovação.",
-      ],
-      en: [
-        "Initiative focused on transforming ideas into digital solutions with real business impact.",
-        "Mission to drive business growth through technology and innovation.",
-      ],
+      pt: ["Iniciativa focada em transformar ideias em soluções digitais com impacto real para empresas.", "Missão de impulsionar o crescimento de negócios através da tecnologia e inovação."],
+      en: ["Initiative focused on transforming ideas into digital solutions with real business impact.", "Mission to drive business growth through technology and innovation."],
     },
   },
 ];

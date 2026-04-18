@@ -25,7 +25,7 @@
 }
 
 .section-title {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: clamp(1.8rem, 4vw, 3rem);
   letter-spacing: -0.02em;
@@ -41,5 +41,7 @@
 }
 
 @media (max-width: 700px) {
-  .section { padding: 4rem 1.5rem; }
+  .section {
+    padding: 4rem 1.5rem;
+  }
 }

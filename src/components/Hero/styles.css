@@ -38,7 +38,7 @@
 }
 
 .hero__title {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-weight: 800;
   font-size: clamp(3rem, 8vw, 6rem);
   line-height: 0.95;
@@ -46,7 +46,9 @@
   margin-bottom: 1.5rem;
 }
 
-.hero__title--accent { color: var(--accent2); }
+.hero__title--accent {
+  color: var(--accent2);
+}
 
 .hero__bio {
   max-width: 500px;
@@ -71,12 +73,15 @@
   background: var(--accent);
   color: #fff;
   text-decoration: none;
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-weight: 600;
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   border-radius: 4px;
-  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  transition:
+    background 0.3s,
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .hero__btn-primary:hover {
@@ -93,12 +98,15 @@
   border: 1px solid var(--border);
   color: var(--text);
   text-decoration: none;
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-weight: 600;
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   border-radius: 4px;
-  transition: border-color 0.3s, color 0.3s, transform 0.3s;
+  transition:
+    border-color 0.3s,
+    color 0.3s,
+    transform 0.3s;
 }
 
 .hero__btn-outline:hover {
@@ -120,7 +128,9 @@
   transition: color 0.3s;
 }
 
-.hero__social-link:hover { color: var(--accent2); }
+.hero__social-link:hover {
+  color: var(--accent2);
+}
 
 /* Photo */
 .hero__photo-wrap {
@@ -161,5 +171,7 @@
 }
 
 @media (max-width: 500px) {
-  .hero { padding: 6rem 1.5rem 3rem; }
+  .hero {
+    padding: 6rem 1.5rem 3rem;
+  }
 }

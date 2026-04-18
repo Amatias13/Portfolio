@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Section, { SectionLabel, SectionTitle } from "../Section";
 import { useLang } from "../../context/LangContext";
@@ -5,8 +6,12 @@ import { useTranslation } from "../../i18n/translations";
 import { projects } from "../../data";
 import "./styles.css";
 
+/**
+ * The ProjectCard component represents an individual project in the Projects section. 
+ */
 function ProjectCard({ project, index, lang, tr }) {
-  const desc       = project.description[lang];
+  // Get description and highlights based on current language
+  const desc = project.description[lang];
   const highlights = project.highlights?.[lang];
 
   return (
@@ -61,9 +66,17 @@ function ProjectCard({ project, index, lang, tr }) {
   );
 }
 
+/**
+ * The Projects component displays a list of projects in a visually appealing grid layout. 
+ * Each project is represented by a card that includes the project title, description, technology stack, and links to GitHub and live demos if available. 
+ * Featured projects are highlighted with an accent line and additional highlights section. 
+ * The component uses framer-motion for smooth animations as the project cards come into view, enhancing the user experience. 
+ * The content is localized based on the current language selection, ensuring accessibility for a wider audience.
+ */
 export default function Projects() {
+  // Get current language and translations
   const { lang } = useLang();
-  const tr       = useTranslation(lang);
+  const tr = useTranslation(lang);
 
   return (
     <Section id="projetos">
