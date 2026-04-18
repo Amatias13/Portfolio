@@ -1,4 +1,4 @@
-# Portofolio
+# Portfolio
 
 Personal portfolio (React + Vite) — build & deploy instructions
 
