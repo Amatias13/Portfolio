@@ -20,7 +20,8 @@ export default function Nav() {
   // language and translations
   const { lang } = useLang();
   const tr = useTranslation(lang);
-  // Navigation links
+
+  // Navigation links — also used in mobile menu JSX
   const links = [
     { label: tr.nav.about, href: "#sobre" },
     { label: tr.nav.projects, href: "#projetos" },
@@ -39,16 +40,18 @@ export default function Nav() {
   // Offset to trigger active link change
   const SCROLL_OFFSET = 120;
 
-  // Scroll event listener to update scrolled state and active link based on scroll position
+  // Scroll event listener — links redefined inside to avoid stale closure
   useEffect(() => {
+    const navLinks = [{ href: "#sobre" }, { href: "#projetos" }, { href: "#experiencia" }, { href: "#contacto" }];
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
-      links.forEach((l) => {
+      navLinks.forEach((l) => {
         const el = document.querySelector(l.href);
         if (el && window.scrollY >= el.offsetTop - SCROLL_OFFSET) setActive(l.href);
       });
     };
     window.addEventListener("scroll", onScroll);
+    onScroll(); // set active on mount
     return () => window.removeEventListener("scroll", onScroll);
   }, [lang]);
 

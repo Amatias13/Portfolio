@@ -6,20 +6,19 @@ import { useTranslation } from "../../i18n/translations";
 import { personal, skills, skillCategories } from "../../data";
 import "./styles.css";
 
-/**
- * The About section combines a personal bio with a dynamic skills showcase.
- * The left side provides a deeper introduction, while the right side lets visitors filter and explore my tech stack.
- * It's designed to be both informative and engaging, giving a well-rounded picture of who I am as a developer and what I bring to the table.
- */
+const LEVEL_CONFIG = {
+  beginner: { label: "beginner", dot: "var(--level-beginner)" },
+  intermediate: { label: "intermediate", dot: "var(--level-intermediate)" },
+  advanced: { label: "advanced", dot: "var(--level-advanced)" },
+};
+
 export default function About() {
   const [filter, setFilter] = useState("all");
   const { lang } = useLang();
   const tr = useTranslation(lang);
 
-  // Define skill categories for filtering — derived from skills data
   const categories = [{ key: "all", label: tr.about.filter_all }, ...skillCategories.map((k) => ({ key: k, label: k }))];
 
-  // Filter skills based on selected category
   const filtered = filter === "all" ? skills : skills.filter((s) => s.category === filter);
 
   return (
@@ -41,6 +40,16 @@ export default function About() {
               <p key={p.slice(0, 32)}>{p}</p>
             ))}
           </div>
+
+          {/* Level legend */}
+          <div className="about__legend">
+            {Object.entries(LEVEL_CONFIG).map(([key, { label, dot }]) => (
+              <span key={key} className="about__legend-item">
+                <span className="about__legend-dot" style={{ background: dot }} />
+                {label}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div>
@@ -56,11 +65,15 @@ export default function About() {
 
           <div className="about__skills">
             <AnimatePresence mode="popLayout">
-              {filtered.map((skill) => (
-                <motion.span key={skill.name} layout initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.85 }} transition={{ duration: 0.2 }} className="about__skill-pill">
-                  {skill.name}
-                </motion.span>
-              ))}
+              {filtered.map((skill) => {
+                const lvl = LEVEL_CONFIG[skill.level] ?? LEVEL_CONFIG.intermediate;
+                return (
+                  <motion.span key={skill.name} layout initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.85 }} transition={{ duration: 0.2 }} className="about__skill-pill" title={lvl.label}>
+                    <span className="about__skill-dot" style={{ background: lvl.dot }} />
+                    {skill.name}
+                  </motion.span>
+                );
+              })}
             </AnimatePresence>
           </div>
         </div>

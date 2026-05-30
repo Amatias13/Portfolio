@@ -9,7 +9,6 @@ import { ThemeProvider } from "./context/ThemeContext";
 import { LangProvider } from "./context/LangContext";
 import { useLang } from "./hooks/useLang";
 import { useTranslation } from "./i18n/translations";
-import "./index.css";
 import "./App.css";
 
 function PortfolioContent() {

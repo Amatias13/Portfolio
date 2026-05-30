@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Section, { SectionLabel, SectionTitle } from "../Section";
 import { useLang } from "../../hooks/useLang";

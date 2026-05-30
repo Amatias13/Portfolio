@@ -1,5 +1,4 @@
 import React from "react";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiPhone } from "react-icons/fi";
 import { useLang } from "../../hooks/useLang";
