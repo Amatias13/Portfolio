@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { useLang } from "../../context/LangContext";
+import { useLang } from "../../hooks/useLang";
 import { useTranslation } from "../../i18n/translations";
 import { personal } from "../../data";
 import "./styles.css";
@@ -13,8 +13,8 @@ const fade = (delay = 0) => ({
 });
 
 /**
- * The Hero component serves as the welcoming section of the portfolio, designed to make a strong first impression. 
- * It features a bold introduction with my name and title, accompanied by a personal tagline that encapsulates my approach to software development. 
+ * The Hero component serves as the welcoming section of the portfolio, designed to make a strong first impression.
+ * It features a bold introduction with my name and title, accompanied by a personal tagline that encapsulates my approach to software development.
  * The layout is visually engaging, with a profile photo and quick links to my GitHub and LinkedIn profiles.
  * The design emphasizes clarity and personality, inviting visitors to explore more about me and my work.
  */
@@ -57,23 +57,24 @@ export default function Hero() {
         </motion.div>
 
         <motion.div className="hero__socials" {...fade(0.45)}>
-          <a href={personal.github} target="_blank" rel="noreferrer" className="hero__social-link">GitHub ↗</a>
-          <a href={personal.linkedin} target="_blank" rel="noreferrer" className="hero__social-link">LinkedIn ↗</a>
+          <a href={personal.github} target="_blank" rel="noreferrer" className="hero__social-link">
+            GitHub ↗
+          </a>
+          <a href={personal.linkedin} target="_blank" rel="noreferrer" className="hero__social-link">
+            LinkedIn ↗
+          </a>
         </motion.div>
       </div>
 
-      <motion.div
-        className="hero__photo-wrap"
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-      >
+      <motion.div className="hero__photo-wrap" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}>
         <div className="hero__photo-border" />
         <img
           src={personal.photo}
           alt={personal.name}
           className="hero__photo"
-          onError={e => { e.target.style.background = "var(--bg3)"; }}
+          onError={(e) => {
+            e.target.style.background = "var(--bg3)";
+          }}
         />
       </motion.div>
     </section>
