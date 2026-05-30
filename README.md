@@ -1,66 +1,37 @@
 # Portfolio
 
-Personal portfolio (React + Vite) — build & deploy instructions
+Personal portfolio built with React + Vite, deployed to GitHub Pages via GitHub Actions.
 
-## Prerequisites
+🌐 **Live:** [amatias13.github.io/Portfolio](https://amatias13.github.io/Portfolio/)
 
-- Node.js 18+ and npm
+## Stack
 
-## Quick start (local)
+React · Vite · Framer Motion · CSS · GitHub Actions
 
-Install dependencies and run dev server:
+## Local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open http://localhost:5173/Portfolio/ (Vite will show the port).
+Open [http://localhost:5173/Portfolio/](http://localhost:5173/Portfolio/)
 
-## Build (production)
+## Available scripts
 
-```bash
-npm run build
-```
+| Script            | Description                      |
+| ----------------- | -------------------------------- |
+| `npm run dev`     | Start dev server                 |
+| `npm run build`   | Production build → `dist/`       |
+| `npm run preview` | Preview production build locally |
+| `npm run lint`    | Run ESLint                       |
+| `npm test`        | Run unit tests (Vitest)          |
 
-This produces the `dist/` folder with the production site.
+## Deployment
 
-## Preview the built site locally
+Automated via GitHub Actions on every push to `main`:
 
-```bash
-npm run preview
-```
+1. Lint → Test → Build
+2. Deploy `dist/` to GitHub Pages
 
-## Deploy options
-
-Two supported deploy workflows are included in this repo:
-
-- Manual `gh-pages` deploy (pushes `dist` to `gh-pages` branch):
-
-```bash
-# runs build then publishes dist to gh-pages
-npm run deploy
-```
-
-- `docs/` deploy (builds and copies `dist` to `docs/` on `main`):
-
-```bash
-npm run deploy:docs
-# commit and push docs/ to main (this repo already contains a commit)
-git add docs && git commit -m "Publish site to docs/ for GitHub Pages" && git push
-```
-
-After `docs/` is on `main`, set GitHub Pages to use `main` → `/docs` in repository Settings → Pages.
-
-## Troubleshooting
-
-- If the site loads raw `.jsx` files or shows MIME errors, ensure Pages is serving the built content (either `gh-pages` branch or `main/docs`).
-- If assets 404, check `vite.config.js` `base` option matches your Pages subpath.
-
-## Where things are
-
-- Source: `src/`
-- Assets: `src/assets/`
-- Build output: `dist/` (generated) and `docs/` (generated and committed when using `deploy:docs`)
-
----
+No manual steps needed — just push to `main`.
