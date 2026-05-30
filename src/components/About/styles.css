@@ -1,3 +1,17 @@
+/* Level color variables — defined here, used in JS inline styles */
+:root,
+[data-theme="dark"] {
+  --level-beginner: #f59e0b;
+  --level-intermediate: #6c63ff;
+  --level-advanced: #10b981;
+}
+
+[data-theme="light"] {
+  --level-beginner: #d97706;
+  --level-intermediate: #5348d4;
+  --level-advanced: #059669;
+}
+
 .about__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -14,6 +28,32 @@
 
 .about__bio p:last-child {
   margin-bottom: 0;
+}
+
+/* Level legend */
+.about__legend {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.about__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+}
+
+.about__legend-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .about__stack-label {
@@ -63,6 +103,9 @@
 }
 
 .about__skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   padding: 0.4rem 0.9rem;
   border: 1px solid var(--border);
   border-radius: 2px;
@@ -81,6 +124,14 @@
   border-color: var(--accent);
   color: var(--accent2);
   background: rgba(108, 99, 255, 0.1);
+}
+
+.about__skill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0.85;
 }
 
 @media (max-width: 800px) {

@@ -1,13 +1,12 @@
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Section, { SectionLabel, SectionTitle } from "../Section";
-import { useLang } from "../../context/LangContext";
+import { useLang } from "../../hooks/useLang";
 import { useTranslation } from "../../i18n/translations";
 import { projects } from "../../data";
 import "./styles.css";
 
 /**
- * The ProjectCard component represents an individual project in the Projects section. 
+ * The ProjectCard component represents an individual project in the Projects section.
  */
 function ProjectCard({ project, index, lang, tr }) {
   // Get description and highlights based on current language
@@ -15,21 +14,12 @@ function ProjectCard({ project, index, lang, tr }) {
   const highlights = project.highlights?.[lang];
 
   return (
-    <motion.article
-      className={`project-card ${project.featured ? "project-card--featured" : ""}`}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
-      whileHover={{ y: -4 }}
-    >
+    <motion.article className={`project-card ${project.featured ? "project-card--featured" : ""}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: index * 0.08 }} whileHover={{ y: -4 }}>
       <div className="project-card__accent-line" />
 
       <div>
         <div className="project-card__meta">
-          <span className="project-card__num">
-            {String(index + 1).padStart(2, "0")}
-          </span>
+          <span className="project-card__num">{String(index + 1).padStart(2, "0")}</span>
           <div className="project-card__links">
             {project.github && (
               <a href={project.github} target="_blank" rel="noreferrer" className="project-card__link">
@@ -48,8 +38,10 @@ function ProjectCard({ project, index, lang, tr }) {
         <p className="project-card__desc">{desc}</p>
 
         <div className="project-card__stack">
-          {project.stack.map(t => (
-            <span key={t} className="project-card__tag">{t}</span>
+          {project.stack.map((t) => (
+            <span key={t} className="project-card__tag">
+              {t}
+            </span>
           ))}
         </div>
       </div>
@@ -57,8 +49,10 @@ function ProjectCard({ project, index, lang, tr }) {
       {project.featured && highlights && (
         <div className="project-card__highlights">
           <div className="project-card__highlights-label">{tr.projects.highlights}</div>
-          {highlights.map(h => (
-            <div key={h} className="project-card__highlight-item">{h}</div>
+          {highlights.map((h) => (
+            <div key={h} className="project-card__highlight-item">
+              {h}
+            </div>
           ))}
         </div>
       )}
@@ -67,10 +61,10 @@ function ProjectCard({ project, index, lang, tr }) {
 }
 
 /**
- * The Projects component displays a list of projects in a visually appealing grid layout. 
- * Each project is represented by a card that includes the project title, description, technology stack, and links to GitHub and live demos if available. 
- * Featured projects are highlighted with an accent line and additional highlights section. 
- * The component uses framer-motion for smooth animations as the project cards come into view, enhancing the user experience. 
+ * The Projects component displays a list of projects in a visually appealing grid layout.
+ * Each project is represented by a card that includes the project title, description, technology stack, and links to GitHub and live demos if available.
+ * Featured projects are highlighted with an accent line and additional highlights section.
+ * The component uses framer-motion for smooth animations as the project cards come into view, enhancing the user experience.
  * The content is localized based on the current language selection, ensuring accessibility for a wider audience.
  */
 export default function Projects() {

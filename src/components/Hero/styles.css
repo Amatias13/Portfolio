@@ -10,7 +10,7 @@
 }
 
 .hero__glow {
-  position: fixed;
+  position: absolute;
   top: -15%;
   right: -8%;
   width: 600px;

@@ -15,7 +15,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173 (Vite will show the port).
+Open http://localhost:5173/Portfolio/ (Vite will show the port).
 
 ## Build (production)
 
