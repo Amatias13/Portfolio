@@ -142,3 +142,8 @@
     display: flex;
   }
 }
+
+/* Light mode: invert white logo to dark */
+[data-theme="light"] .nav__logo-img {
+  filter: invert(1);
+}

@@ -4,6 +4,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
+import BackToTop from "./components/BackToTop";
 import { Divider } from "./components/Section";
 import { ThemeProvider } from "./context/ThemeProvider";
 import { LangProvider } from "./context/LangProvider";
@@ -32,6 +33,7 @@ function PortfolioContent() {
       <footer className="footer">
         © {new Date().getFullYear()} André Matias · {tr.footer}
       </footer>
+      <BackToTop />
     </>
   );
 }

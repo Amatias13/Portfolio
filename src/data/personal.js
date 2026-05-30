@@ -10,13 +10,24 @@ export const personal = {
   linkedin: "https://www.linkedin.com/in/andre-matias-dev/",
   photo: photo,
 
-  // Hero — curto, pessoal, memorável
   tagline: {
     pt: "Entre código, café e ideias — construo coisas que resolvem problemas reais.",
     en: "Between code, coffee and ideas — I build things that solve real problems.",
   },
 
-  // About — mais contexto, ainda com personalidade
+  stats: {
+    pt: [
+      { value: "3+",  label: "anos de exp." },
+      { value: "5",   label: "projetos" },
+      { value: "2",   label: "empresas" },
+    ],
+    en: [
+      { value: "3+",  label: "years exp." },
+      { value: "5",   label: "projects" },
+      { value: "2",   label: "companies" },
+    ],
+  },
+
   bio: {
     pt: [
       "Sou o tipo de pessoa que abre o terminal antes de abrir o email. Full Stack Developer com 3+ anos na INSTICC, onde transformo requisitos em sistemas que realmente funcionam — do backend ao frontend, da base de dados à interface.",

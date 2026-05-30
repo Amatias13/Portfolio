@@ -175,3 +175,75 @@
     padding: 6rem 1.5rem 3rem;
   }
 }
+
+/* Availability badge */
+.hero__availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.75;
+}
+
+.hero__availability-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f59e0b;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+  animation: pulse-dot 2.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.85);
+  }
+}
+
+/* Stats row */
+.hero__stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.hero__stat-value {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--accent2);
+  line-height: 1;
+}
+
+.hero__stat-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+}
+
+/* CV download button — reuses outline style but adds icon gap */
+.hero__btn-outline svg {
+  flex-shrink: 0;
+}

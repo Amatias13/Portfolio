@@ -1,0 +1,30 @@
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.4);
+  transition: background 0.25s, transform 0.25s;
+}
+
+.back-to-top:hover {
+  background: var(--accent2);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 500px) {
+  .back-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+}

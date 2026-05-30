@@ -19,7 +19,10 @@ function ProjectCard({ project, index, lang, tr }) {
 
       <div>
         <div className="project-card__meta">
-          <span className="project-card__num">{String(index + 1).padStart(2, "0")}</span>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+            <span className="project-card__num">{String(index + 1).padStart(2, "0")}</span>
+            {project.featured && <span className="project-card__featured-badge">Featured</span>}
+          </div>
           <div className="project-card__links">
             {project.github && (
               <a href={project.github} target="_blank" rel="noreferrer" className="project-card__link">

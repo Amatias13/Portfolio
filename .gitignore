@@ -25,4 +25,8 @@ docs/
 *.sln
 *.sw?
 
+.env
+.env.*
 
+
+service_jzl8wfl
